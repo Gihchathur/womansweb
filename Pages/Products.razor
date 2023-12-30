@@ -1,0 +1,104 @@
+﻿@page "/inventory"
+@inject HttpClient Http
+@using System.Text.Json
+
+<PageTitle>Inventory</PageTitle>
+
+<h1>Womans - Inventory</h1>
+
+<div class="search-container">
+    <input type="text" class="search-input" placeholder="Search..." @bind="searchtext">
+    <button type="submit" class="search-button" @onclick="RefreshProductList">Search</button>
+</div>
+
+<button class="add-product-btn" @onclick="ShowAddProductModal">Add Product</button>
+
+@if (productlist == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <!-- Table header -->
+        <thead>
+            <tr>
+                <th>ProductID</th>
+                <th>ProductName</th>
+                <th>NetPrice</th>
+                <th>SellingPrice</th>
+                <th>Quantity</th>
+            </tr>
+        </thead>
+        <!-- Table body -->
+        <tbody>
+            <!-- Display existing products -->
+            @foreach (var forecast in productlist)
+            {
+                <tr>
+                    <td>@forecast.ProductID</td>
+                    <td>@forecast.ProductName</td>
+                    <td>@forecast.NetPrice</td>
+                    <td>@forecast.SellingPrice</td>
+                    <td>@forecast.Quantity</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+<!-- Modal for adding new product -->
+@if (IsmodalOpen)
+{
+    <div>
+        <div class="modal-overlay">
+            <div class="modal">
+                <div class="modal-header">
+                    <h5 class="modal-title">Add New Product</h5>
+                    <button type="button" class="close-button" data-dismiss="modal" aria-label="Close" @onclick="CloseAddProductModal">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Form for adding a new product -->
+                    <form>
+                        <div class="form-group">
+                            <label for="productName">Product ID:</label>
+                            <input type="text" class="form-control" id="productID" @bind="newProduct.ProductID" />
+                        </div>
+                        <div class="form-group">
+                            <label for="productName">Product Name:</label>
+                            <input type="text" class="form-control" id="productName" @bind="newProduct.ProductName" />
+                        </div>
+                        <div class="form-group">
+                            <label for="productName">Net Price:</label>
+                            <input type="text" class="form-control" id="NetPrice" @bind="newProduct.NetPrice" />
+                        </div>
+                        <div class="form-group">
+                            <label for="productName">Selling Price:</label>
+                            <input type="text" class="form-control" id="SellingPrice" @bind="newProduct.SellingPrice" />
+                        </div>
+                        <div class="form-group">
+                            <label for="productName">Quantity:</label>
+                            <input type="text" class="form-control" id="Quantity" @bind="newProduct.Quantity" />
+                        </div>
+                        <!-- Add other input fields for NetPrice, SellingPrice, Quantity, etc. -->
+                        <!-- For example:
+                        <div class="form-group">
+                        <label for="netPrice">Net Price:</label>
+                        <input type="text" class="form-control" id="netPrice" />
+                        </div>
+                        -->
+                        <!-- Add more fields as needed -->
+                        <!-- Submit button -->
+                        <button type="submit" class="btn btn-primary" @onclick="InsertProduct">Add Product</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+@code {
+   
+}

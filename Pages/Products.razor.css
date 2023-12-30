@@ -1,0 +1,180 @@
+﻿.search-container {
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.search-input {
+    padding: 8px;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    outline: none;
+}
+
+.search-button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+    .search-button:hover {
+        background-color: #45a049;
+    }
+
+/* Styles for Add Product Button */
+.add-product-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+    .add-product-btn:hover {
+        background-color: #0056b3;
+    }
+
+/* Styles for Inventory Table */
+.inventory-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+    .inventory-table, .inventory-table th, .inventory-table td {
+        border: 1px solid #ddd;
+    }
+
+        .inventory-table th, .inventory-table td {
+            padding: 12px;
+            text-align: left;
+        }
+
+        .inventory-table th {
+            background-color: #f2f2f2;
+        }
+
+/* Modal backdrop style */
+.modal-backdrop {
+    opacity: 0.5;
+    background-color: #000;
+}
+
+/* Modal content style */
+.modal-content {
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+/* Modal header style */
+.modal-header {
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ccc;
+}
+
+/* Modal header title style */
+.modal-title {
+    margin: 0;
+    color: #333;
+    font-size: 1.25rem;
+}
+
+/* Modal body style */
+.modal-body {
+    padding: 20px;
+}
+
+/* Modal close button style */
+.close {
+    color: #333;
+    opacity: 0.5;
+}
+
+    /* Modal close button hover style */
+    .close:hover {
+        opacity: 1;
+    }
+
+/* Input field style */
+.form-control {
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    padding: 8px;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+/* Submit button style */
+.btn-primary {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    padding: 8px 20px;
+    cursor: pointer;
+}
+
+    /* Submit button hover style */
+    .btn-primary:hover {
+        background-color: #0056b3;
+    }
+
+/* Modal overlay styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Ensure it's above other elements */
+}
+
+/* Modal styles */
+.modal {
+    position: relative;
+    background-color: #fff;
+    padding: 20px;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    max-width: 60%; /* Adjust width as needed */
+    max-height: 65%; /* Adjust height as needed */
+    overflow-y: auto; /* Enable vertical scrolling if content exceeds height */
+}
+
+/* Modal header styles */
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.close-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 28px;
+    color: #aaa;
+    padding: 0;
+    margin: 0;
+    line-height: 1;
+    transition: color 0.3s ease;
+}
+
+    .close-button:hover {
+        color: #000; /* Change color on hover */
+    }
